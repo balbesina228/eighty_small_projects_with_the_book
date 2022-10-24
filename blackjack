@@ -123,7 +123,7 @@ def display_hands(player_hand, dealer_hand, show_dealer_hand):
         display_cards(dealer_hand)
     else:
         print('DEALER: ???')
-        display_cards([backside] + dealer_hand[1:])
+        display_cards([backside] + [backside] + dealer_hand[2:])
     print('PLAYER:', get_hand_value(player_hand))
     display_cards(player_hand)
 
@@ -152,7 +152,7 @@ def display_cards(cards):
         if card == backside:
             rows[1] += '|## | '
             rows[2] += '|###| '
-            rows[3] += '| ##| '
+            rows[3] += '|_##| '
         else:
             rank, suit = card
             rows[1] += '|{} | '.format(rank.ljust(2))
