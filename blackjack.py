@@ -123,7 +123,7 @@ def display_hands(player_hand, dealer_hand, show_dealer_hand):
         display_cards(dealer_hand)
     else:
         print('DEALER: ???')
-        display_cards([backside] + [backside] + dealer_hand[2:])
+        display_cards([backside] * len(dealer_hand))
     print('PLAYER:', get_hand_value(player_hand))
     display_cards(player_hand)
 
