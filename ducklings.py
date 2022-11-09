@@ -133,12 +133,12 @@ def main():
 
     while True:
         for lane_num, duckling_obj in enumerate(duckling_lanes):
-            if duckling_obj is None and random() <= density:
+            if duckling_obj == None and random() <= density:
                 duckling_obj = Duckling()
                 duckling_lanes[lane_num] = duckling_obj
-            if duckling_obj is not None:
+            if duckling_obj != None:
                 print(duckling_obj.get_next_body_part(), end='')
-                if duckling_obj.part_to_display_next is None:
+                if duckling_obj.part_to_display_next == None:
                     duckling_lanes[lane_num] = None
             else:
                 print(' ' * duckling_width, end='')
